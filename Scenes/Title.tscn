@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Images/title.jpg" type="Texture" id=1]
+
+[node name="CenterContainer" type="CenterContainer"]
+margin_left = 21.8633
+margin_top = 25.2269
+margin_right = 947.863
+margin_bottom = 524.227
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Sprite" parent="."]
+position = Vector2( 492.736, 257.868 )
+scale = Vector2( 1.672, 1.26079 )
+texture = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 442.0
+margin_top = 227.0
+margin_right = 483.0
+margin_bottom = 271.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "Quit"
