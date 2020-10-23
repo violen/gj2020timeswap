@@ -15,5 +15,5 @@ data_*/
 !.vscode/extensions.json
 
 # build
-build/
+build/*
 !build/.keep
