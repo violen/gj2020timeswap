@@ -13,3 +13,7 @@ data_*/
 # VS Code
 .vscode/
 !.vscode/extensions.json
+
+# build
+build/
+!build/.keep
