@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TimeSwap"
-run/main_scene="res://Scenes/TestLevel.tscn"
+run/main_scene="res://Scenes/Title.tscn"
 config/icon="res://Assets/Images/icon.png"
 
 [input]
