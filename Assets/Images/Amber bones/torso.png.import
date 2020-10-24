@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torso.png-801460e145e1d150701227e573d9f379.stex"
+path="res://.import/torso.png-c35afe907e1de72daee87343e3e07fc1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Amber bones/torso.png"
-dest_files=[ "res://.import/torso.png-801460e145e1d150701227e573d9f379.stex" ]
+source_file="res://Assets/Images/Amber bones/torso.png"
+dest_files=[ "res://.import/torso.png-c35afe907e1de72daee87343e3e07fc1.stex" ]
 
 [params]
 

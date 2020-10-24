@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fist_rear.png-1150fc82936b3321c95a7faa0ade83d6.stex"
+path="res://.import/fist_rear.png-82e8cdecc883eb2012b18fcca956566b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Amber bones/fist_rear.png"
-dest_files=[ "res://.import/fist_rear.png-1150fc82936b3321c95a7faa0ade83d6.stex" ]
+source_file="res://Assets/Images/Amber bones/fist_rear.png"
+dest_files=[ "res://.import/fist_rear.png-82e8cdecc883eb2012b18fcca956566b.stex" ]
 
 [params]
 

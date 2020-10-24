@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex"
+path="res://.import/80s entrance foreground flat.png-f91cbcd71ba37efdfad2f6fec916286b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://80s entrance foreground flat.png"
-dest_files=[ "res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex" ]
+source_file="res://Assets/Images/80s entrance foreground flat.png"
+dest_files=[ "res://.import/80s entrance foreground flat.png-f91cbcd71ba37efdfad2f6fec916286b.stex" ]
 
 [params]
 

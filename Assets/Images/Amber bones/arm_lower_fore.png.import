@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arm_lower_fore.png-d1029202e13eb8d875aedddca1d6fdc0.stex"
+path="res://.import/arm_lower_fore.png-16ffc1905b52c6a91fdd34a82121028f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Amber bones/arm_lower_fore.png"
-dest_files=[ "res://.import/arm_lower_fore.png-d1029202e13eb8d875aedddca1d6fdc0.stex" ]
+source_file="res://Assets/Images/Amber bones/arm_lower_fore.png"
+dest_files=[ "res://.import/arm_lower_fore.png-16ffc1905b52c6a91fdd34a82121028f.stex" ]
 
 [params]
 

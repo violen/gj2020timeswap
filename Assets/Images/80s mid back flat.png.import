@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/80s mid back flat.png-28c61a6554029730f699400299bbef4e.stex"
+path="res://.import/80s mid back flat.png-1d6af453d375124c102a3102c5ea1d95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://80s mid back flat.png"
-dest_files=[ "res://.import/80s mid back flat.png-28c61a6554029730f699400299bbef4e.stex" ]
+source_file="res://Assets/Images/80s mid back flat.png"
+dest_files=[ "res://.import/80s mid back flat.png-1d6af453d375124c102a3102c5ea1d95.stex" ]
 
 [params]
 

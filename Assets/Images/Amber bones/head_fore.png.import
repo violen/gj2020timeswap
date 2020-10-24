@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/head_fore.png-f33560e4538595284e0885d1419ed39f.stex"
+path="res://.import/head_fore.png-f5c03853056d83dc6e6fb3f9d588823b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Amber bones/head_fore.png"
-dest_files=[ "res://.import/head_fore.png-f33560e4538595284e0885d1419ed39f.stex" ]
+source_file="res://Assets/Images/Amber bones/head_fore.png"
+dest_files=[ "res://.import/head_fore.png-f5c03853056d83dc6e6fb3f9d588823b.stex" ]
 
 [params]
 
