@@ -11,5 +11,5 @@ dest_files=[ "res://.import/shoot.ogg-ba168e4b11532ea399f3308b9651283c.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
