@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://80s entrance flat.png" type="Texture" id=1]
+[ext_resource path="res://80s entrance foreground flat.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -0.0078125, 3968.57, -0.015625, 4095.99, 8191.99, 4095.99, 8194.33, 3714.39, 6400.05, 3712.83, 6398, 3999.07, 2558.63, 4000.58, 2558.63, 3968.51, 2535.47, 3968.51, 2534.13, 3093.26, 2412.39, 3096.86, 2333.34, 3216.27, 2332.76, 3519.86, 2297.08, 3519.86, 1927.08, 3467.66, 1296.38, 3576.18, 1294.37, 3965.96 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 6126.24, 3465.89, 4743.8, 3465.89, 4600.85, 3703.02, 4599.17, 4005.75, 6126.24, 4009.11 )
+one_way_collision = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
