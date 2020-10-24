@@ -24,6 +24,17 @@ config/name="TimeSwap"
 run/main_scene="res://Scenes/Title.tscn"
 config/icon="res://Assets/Images/icon.png"
 
+[autoload]
+
+GameGlobals="*res://Scripts/GameGlobals.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
