@@ -9,7 +9,7 @@ var direction = Vector2(1, 0)
 var is_mid_air = false
 var jump_sound = ResourceLoader.load("res://Assets/Sounds/jump.ogg")
 
-enum {MELEE, RANGE}
+enum {MELEE, RANGE, UNARMED}
 
 var weapon_type = MELEE
 
@@ -87,15 +87,16 @@ func _switch_weapon():
     if OS.get_system_time_msecs() > last_weapon_switch + switch_weapon_cooldown:
         last_weapon_switch = OS.get_system_time_msecs()
     else:
-
         return
 
     match weapon_type:
         MELEE:
             weapon_type = RANGE
             $SwitchWeapon.play()
+            $Melee.enabled = false
         RANGE:
             weapon_type = MELEE
             $SwitchWeapon.play()
+            $Melee.enabled = true
         _:
             print("unsuported weapon")
