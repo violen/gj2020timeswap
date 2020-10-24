@@ -4,6 +4,7 @@ export var speed_x = 35
 export var jump_force = 600
 export var gravity = 1000
 var velocity = Vector2.ZERO
+var direction = Vector2(1, 0)
 
 var is_mid_air = false
 var jump_sound = ResourceLoader.load("res://Assets/Sounds/jump.ogg")
@@ -22,6 +23,10 @@ func _process(delta):
     _get_input()
     _move_Player(delta)
 
+func _physics_process(delta):
+    if direction != Vector2.ZERO:
+        $Melee.cast_to = direction.normalized() * 30
+
 func _move_Player(delta):
 
     # if velocity.length() > 0:
@@ -33,11 +38,15 @@ func _move_Player(delta):
 
 func _get_input():
     if Input.is_action_pressed("run_right"):
+        direction.x = 1
         velocity.x += speed_x
     if Input.is_action_pressed("run_left"):
+        direction.x = -1
         velocity.x -= speed_x
     if Input.is_action_just_pressed("attack"):
         _attack()
+    if Input.is_action_just_pressed(""):
+        _switch_weapon()
 
 func _check_and_perform_jump():
     if Input.is_action_just_pressed("jump"):
@@ -64,6 +73,18 @@ func _attack():
 func _perform_melee_attack():
     if !$Slap.is_playing():
         $Slap.play()
+    var target = $Melee.get_collider()
+    if target != null:
+        target._hit()
 
 func _perform_range_attack():
     pass
+
+func _switch_weapon():
+    match weapon_type:
+        MELEE:
+            weapon_type = RANGE
+        RANGE:
+            weapon_type = MELEE
+        _:
+            print("unsuported weapon")

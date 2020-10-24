@@ -10,7 +10,7 @@ radius = 14.2103
 height = 28.7556
 
 [node name="PlayerBody" type="KinematicBody2D"]
-position = Vector2( 577.195, 391.659 )
+position = Vector2( 594.676, 387.951 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -31,3 +31,8 @@ stream = ExtResource( 3 )
 [node name="Slap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
+
+[node name="Melee" type="RayCast2D" parent="."]
+position = Vector2( 822.224, 304.689 )
+enabled = true
+cast_to = Vector2( 30, 0 )

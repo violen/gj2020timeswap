@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Images/orange.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/title.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/Images/enemy.jpg" type="Texture" id=3]
+[ext_resource path="res://Prefabs/EnemyBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/enemy.gd" type="Script" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
 
@@ -17,11 +16,6 @@ __meta__ = {
 position = Vector2( 962.13, 544.194 )
 scale = Vector2( 3.14207, 2.49144 )
 texture = ExtResource( 2 )
-
-[node name="enemy" type="Sprite" parent="."]
-position = Vector2( 701.647, 241.796 )
-texture = ExtResource( 3 )
-script = ExtResource( 5 )
 
 [node name="PlayerBody" parent="." instance=ExtResource( 4 )]
 
@@ -39,3 +33,5 @@ physics_material_override = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/RigidBody2D"]
 polygon = PoolVector2Array( 372.037, 197.025, 446.699, 152.821, 554.917, 164.713, 666.703, 212.281, 820.125, 282.913, 840.922, 283.039, 876.598, 250.93, 876.192, 250.525, 876.192, 250.525, 856.557, 228.974, 893.458, 223.903, 956.83, 230.495, 973.676, 253.823, 959.714, 273.663, 949.623, 318.23, 884.033, 367.843, 783.967, 337.571, 749.49, 287.117, 655.309, 256.845, 598.969, 311.503 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
