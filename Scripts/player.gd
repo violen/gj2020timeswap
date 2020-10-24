@@ -13,6 +13,9 @@ enum {MELEE, RANGE}
 
 var weapon_type = MELEE
 
+export var switch_weapon_cooldown = 0
+var last_weapon_switch = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
@@ -45,7 +48,7 @@ func _get_input():
         velocity.x -= speed_x
     if Input.is_action_just_pressed("attack"):
         _attack()
-    if Input.is_action_just_pressed(""):
+    if Input.is_action_just_pressed("switch_weapon"):
         _switch_weapon()
 
 func _check_and_perform_jump():
@@ -81,10 +84,18 @@ func _perform_range_attack():
     pass
 
 func _switch_weapon():
+    if OS.get_system_time_msecs() > last_weapon_switch + switch_weapon_cooldown:
+        last_weapon_switch = OS.get_system_time_msecs()
+    else:
+
+        return
+
     match weapon_type:
         MELEE:
             weapon_type = RANGE
+            $SwitchWeapon.play()
         RANGE:
             weapon_type = MELEE
+            $SwitchWeapon.play()
         _:
             print("unsuported weapon")
