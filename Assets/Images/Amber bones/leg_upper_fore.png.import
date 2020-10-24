@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex"
+path="res://.import/leg_upper_fore.png-d752c56fd1985b2a77f102ccb1ecf8cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://80s entrance foreground flat.png"
-dest_files=[ "res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex" ]
+source_file="res://Amber bones/leg_upper_fore.png"
+dest_files=[ "res://.import/leg_upper_fore.png-d752c56fd1985b2a77f102ccb1ecf8cc.stex" ]
 
 [params]
 

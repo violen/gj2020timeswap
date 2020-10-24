@@ -1,0 +1,233 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Amber bones/synth.png" type="Texture" id=1]
+[ext_resource path="res://Amber bones/gun.png" type="Texture" id=2]
+[ext_resource path="res://Amber bones/device.png" type="Texture" id=3]
+[ext_resource path="res://Amber bones/leg_upper_rear.png" type="Texture" id=4]
+[ext_resource path="res://Amber bones/leg_lower_rear.png" type="Texture" id=5]
+[ext_resource path="res://Amber bones/fist_rear.png" type="Texture" id=6]
+[ext_resource path="res://Amber bones/leg_upper_fore.png" type="Texture" id=7]
+[ext_resource path="res://Amber bones/leg_lower_fore.png" type="Texture" id=8]
+[ext_resource path="res://Amber bones/head_fore.png" type="Texture" id=9]
+[ext_resource path="res://Amber bones/head_rear.png" type="Texture" id=10]
+[ext_resource path="res://Amber bones/arm_upper_fore.png" type="Texture" id=11]
+[ext_resource path="res://Amber bones/arm_upper_rear.png" type="Texture" id=12]
+[ext_resource path="res://Amber bones/arm_lower_fore.png" type="Texture" id=13]
+[ext_resource path="res://Amber bones/arm_lower_rear.png" type="Texture" id=14]
+[ext_resource path="res://Amber bones/torso.png" type="Texture" id=15]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.5528
+height = 158.216
+
+[sub_resource type="AnimationNodeStateMachine" id=2]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="AnimationPlayer"]
+
+[node name="head_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -18.1007, -96.1069 )
+texture = ExtResource( 10 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 31.1777, -0.204023, 13.381, -1.68708, 3.84714, 1.80869, -2.19099, 14.6265, 2.68188, 40.6858, 12.7454, 43.8638, 26.1988, 50.3256, 33.2963, 49.2663, 36.4743, 42.4867, 35.2031, 33.2706, 30.1183, 9.54174, 33.2963, 0.749365 )
+uv = PoolVector2Array( 31.1777, -0.204023, 13.381, -1.68708, 3.84714, 1.80869, -2.19099, 14.6265, 2.68188, 40.6858, 12.7454, 43.8638, 26.1988, 50.3256, 33.2963, 49.2663, 36.4743, 42.4867, 35.2031, 33.2706, 30.1183, 9.54174, 33.2963, 0.749365 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="arm_lower_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( 18.2111, -36.9763 )
+texture = ExtResource( 14 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 2.17127, 6.05943, 7.31707, 3.48654, 11.691, -0.287048, 13.0632, 0.0560036, 15.3788, 2.45738, 15.2073, 5.80215, 6.88825, 13.4351, 1.91398, 13.5208, 0.112953, 9.48997 )
+uv = PoolVector2Array( 2.17127, 6.05943, 7.31707, 3.48654, 11.691, -0.287048, 13.0632, 0.0560036, 15.3788, 2.45738, 15.2073, 5.80215, 6.88825, 13.4351, 1.91398, 13.5208, 0.112953, 9.48997 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="arm_upper_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( 10.671, -60.192 )
+texture = ExtResource( 12 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 3.2859, -0.689305, -0.533539, 3.06069, -0.602985, 16.6024, 7.6609, 36.1857, 14.6054, 35.9774, 18.4248, 30.5607, 12.8692, 15.4218, 11.4804, 5.14403, 8.14702, -1.24486 )
+uv = PoolVector2Array( 3.2859, -0.689305, -0.533539, 3.06069, -0.602985, 16.6024, 7.6609, 36.1857, 14.6054, 35.9774, 18.4248, 30.5607, 12.8692, 15.4218, 11.4804, 5.14403, 8.14702, -1.24486 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0.5, 0, 1, 1, 1, 1, 1, 1, 0.5 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="leg_lower_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -0.554245, 17.9075 )
+texture = ExtResource( 5 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 16.882, -1.73091, 9.1897, 0.881569, -0.969955, 37.6015, 2.36822, 55.5985, -1.55051, 73.4505, 10.3508, 77.3692, 11.3668, 75.6276, 24.5743, 77.9498, 30.9604, 73.5956, 28.2028, 63.5811, 20.3653, 61.6943, 21.6716, 58.6464, 20.075, 38.9077, 21.9618, 37.0209, 21.8167, 29.9091, 26.0257, 16.8467, 24.8646, 1.7524 )
+uv = PoolVector2Array( 16.882, -1.73091, 9.1897, 0.881569, -0.969955, 37.6015, 2.36822, 55.5985, -1.55051, 73.4505, 10.3508, 77.3692, 11.3668, 75.6276, 24.5743, 77.9498, 30.9604, 73.5956, 28.2028, 63.5811, 20.3653, 61.6943, 21.6716, 58.6464, 20.075, 38.9077, 21.9618, 37.0209, 21.8167, 29.9091, 26.0257, 16.8467, 24.8646, 1.7524 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="leg_upper_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -2.22667, -18.1259 )
+texture = ExtResource( 4 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 7.44804, -3.18229, -1.84078, 4.65515, -1.84078, 29.764, 8.60915, 60.5332, 17.0271, 60.0978, 28.0576, 56.1791, 26.316, 25.555, 20.075, 3.78433 )
+uv = PoolVector2Array( 7.44804, -3.18229, -1.84078, 4.65515, -1.84078, 29.764, 8.60915, 60.5332, 17.0271, 60.0978, 28.0576, 56.1791, 26.316, 25.555, 20.075, 3.78433 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="leg_lower_fore" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -19.8542, 25.0799 )
+texture = ExtResource( 8 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 18.9139, -1.58578, 9.62511, 2.04267, -1.55051, 36.4403, 1.06197, 53.8569, 3.96473, 54.1472, -0.67968, 72.7248, 11.3668, 75.9178, 11.657, 74.1762, 22.107, 77.6595, 30.525, 73.4505, 30.9604, 68.9512, 25.5903, 61.5492, 21.3813, 60.6784, 20.6556, 38.9077, 26.8965, 17.7176, 25.8805, 1.89753 )
+uv = PoolVector2Array( 18.9139, -1.58578, 9.62511, 2.04267, -1.55051, 36.4403, 1.06197, 53.8569, 3.96473, 54.1472, -0.67968, 72.7248, 11.3668, 75.9178, 11.657, 74.1762, 22.107, 77.6595, 30.525, 73.4505, 30.9604, 68.9512, 25.5903, 61.5492, 21.3813, 60.6784, 20.6556, 38.9077, 26.8965, 17.7176, 25.8805, 1.89753 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="leg_upper_fore" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -20.0849, -11.9747 )
+texture = ExtResource( 7 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 6.43208, -2.02119, -1.98592, 5.2357, -1.26023, 33.1022, 7.3029, 59.8075, 27.0417, 56.7596, 26.6062, 29.9091, 21.091, 4.36488 )
+uv = PoolVector2Array( 6.43208, -2.02119, -1.98592, 5.2357, -1.26023, 33.1022, 7.3029, 59.8075, 27.0417, 56.7596, 26.6062, 29.9091, 21.091, 4.36488 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0.5, 0.5, 1, 1, 0.5, 0.5 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="torso" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -23.855, -69.518 )
+texture = ExtResource( 15 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 29.7993, -1.87605, 21.6716, -1.58578, 17.6077, 5.2357, 6.72235, 9.15443, 3.38418, 19.8946, 8.464, 24.3939, 2.22308, 27.4418, 0.916832, 40.0688, 6.86749, 43.407, -2.56647, 61.2589, 1.06197, 66.0485, 2.80363, 73.4505, 28.0576, 74.3213, 43.5874, 67.645, 43.4422, 63.1457, 49.1026, 59.8075, 42.5714, 38.182, 49.2477, 24.9745, 42.136, 6.39681, 32.2666, 3.78433 )
+uv = PoolVector2Array( 29.7993, -1.87605, 21.6716, -1.58578, 17.6077, 5.2357, 6.72235, 9.15443, 3.38418, 19.8946, 8.464, 24.3939, 2.22308, 27.4418, 0.916832, 40.0688, 6.86749, 43.407, -2.56647, 61.2589, 1.06197, 66.0485, 2.80363, 73.4505, 28.0576, 74.3213, 43.5874, 67.645, 43.4422, 63.1457, 49.1026, 59.8075, 42.5714, 38.182, 49.2477, 24.9745, 42.136, 6.39681, 32.2666, 3.78433 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="device" type="Polygon2D" parent="AnimationPlayer/Skeleton2D/torso"]
+position = Vector2( -5.35747, 56.7496 )
+texture = ExtResource( 3 )
+skeleton = NodePath("../..")
+polygon = PoolVector2Array( 2.65849, -1.2955, -1.26023, 18.8787, 20.2202, 24.8293, 23.4132, 3.20378 )
+uv = PoolVector2Array( 2.65849, -1.2955, -1.26023, 18.8787, 20.2202, 24.8293, 23.4132, 3.20378 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 1, 1, 1, 0 ) ]
+
+[node name="wepon_gun" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -18.9161, -44.7619 )
+texture = ExtResource( 2 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( -2.85675, 12.2023, -2.13106, 35.4244, 40.1041, 22.9425, 40.3943, 15.3954, 62.7456, 6.39681, 57.6657, -4.3434 )
+uv = PoolVector2Array( -2.85675, 12.2023, -2.13106, 35.4244, 40.1041, 22.9425, 40.3943, 15.3954, 62.7456, 6.39681, 57.6657, -4.3434 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="wepon_synth" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+visible = false
+texture = ExtResource( 1 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( -2.2762, -2.02119, -2.2762, 31.3605, 72.3247, 29.6189, 71.8893, -2.74688 )
+uv = PoolVector2Array( -2.2762, -2.02119, -2.2762, 31.3605, 72.3247, 29.6189, 71.8893, -2.74688 )
+
+[node name="fist_rear" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( 28.3308, -40.3495 )
+texture = ExtResource( 6 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 5.1609, -1.31431, 11.9665, 2.22736, 11.9665, 5.35236, 7.79979, 10.144, 0.160904, 9.72736, -1.22799, 7.4357, -0.533539, 1.81069 )
+uv = PoolVector2Array( 5.1609, -1.31431, 11.9665, 2.22736, 11.9665, 5.35236, 7.79979, 10.144, 0.160904, 9.72736, -1.22799, 7.4357, -0.533539, 1.81069 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="arm_upper_fore" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -25.6408, -59.1999 )
+texture = ExtResource( 11 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 13.0081, 0.282917, 7.86924, 1.88014, 2.6609, 12.1579, -0.0474281, 36.8107, 5.02202, 39.519, 10.5776, 36.5329, 12.7998, 20.2135, 17.4526, 7.15792, 17.0359, 1.18569 )
+uv = PoolVector2Array( 13.0081, 0.282917, 7.86924, 1.88014, 2.6609, 12.1579, -0.0474281, 36.8107, 5.02202, 39.519, 10.5776, 36.5329, 12.7998, 20.2135, 17.4526, 7.15792, 17.0359, 1.18569 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0.5, 1, 1, 1, 0.5, 0.5, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="arm_lower_fore" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -25.4424, -27.6503 )
+texture = ExtResource( 13 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 21.2107, 3.14348, 15.1215, 3.05772, 4.65841, -0.372812, 0.456005, 1.17093, -0.401627, 5.2018, 3.45772, 10.0903, 13.3205, 12.6632, 22.926, 13.0063, 32.36, 9.48997, 30.4732, 0.999401, 27.2999, 2.80043, 24.4697, 2.11432 )
+uv = PoolVector2Array( 21.2107, 3.14348, 15.1215, 3.05772, 4.65841, -0.372812, 0.456005, 1.17093, -0.401627, 5.2018, 3.45772, 10.0903, 13.3205, 12.6632, 22.926, 13.0063, 32.36, 9.48997, 30.4732, 0.999401, 27.2999, 2.80043, 24.4697, 2.11432 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="head_fore" type="Polygon2D" parent="AnimationPlayer/Skeleton2D"]
+position = Vector2( -15.1243, -96.1069 )
+texture = ExtResource( 9 )
+skeleton = NodePath("..")
+polygon = PoolVector2Array( 25.5081, -0.828195, 15.3692, -0.897638, 7.31368, 4.72736, 3.70257, 10.4218, -0.741871, 10.6301, -0.602985, 14.8663, 0.924793, 14.8663, -0.464096, 18.0607, 0.438683, 24.2413, 4.81368, 26.2551, 6.06368, 26.6024, 5.96578, 52.868, 9.99121, 52.5502, 15.7115, 43.7578, 16.1353, 37.19, 22.1734, 36.6604, 21.7497, 34.7536, 24.9277, 36.1307, 33.0844, 26.9146, 36.0505, 20.4528, 35.309, 9.7536, 29.2709, -0.839617 )
+uv = PoolVector2Array( 25.5081, -0.828195, 15.3692, -0.897638, 7.31368, 4.72736, 3.70257, 10.4218, -0.741871, 10.6301, -0.602985, 14.8663, 0.924793, 14.8663, -0.464096, 18.0607, 0.438683, 24.2413, 4.81368, 26.2551, 6.06368, 26.6024, 5.96578, 52.868, 9.99121, 52.5502, 15.7115, 43.7578, 16.1353, 37.19, 22.1734, 36.6604, 21.7497, 34.7536, 24.9277, 36.1307, 33.0844, 26.9146, 36.0505, 20.4528, 35.309, 9.7536, 29.2709, -0.839617 )
+bones = [ NodePath("root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/head_fore"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("root/torso/head_fore/head_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_fore/arm_lower_fore/weapon_gun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/torso/arm_upper_rear/arm_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_fore/leg_lower_fore"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/leg_upper_rear/leg_lower_rear"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("root/device"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="root" type="Bone2D" parent="AnimationPlayer/Skeleton2D"]
+visible = false
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="torso" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root"]
+position = Vector2( -7.59194, -52.8067 )
+rotation = 1.94684
+rest = Transform2D( -0.367242, 0.930125, -0.930125, -0.367242, -7.59194, -52.8067 )
+
+[node name="head_fore" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso"]
+position = Vector2( -10.7416, -7.07803 )
+rotation = -1.85362
+rest = Transform2D( -0.279067, -0.960272, 0.960272, -0.279067, -10.7416, -7.07803 )
+
+[node name="head_rear" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso/head_fore"]
+position = Vector2( -4.6425, -14.596 )
+rotation = 1.31966
+rest = Transform2D( 0.248505, 0.968631, -0.968631, 0.248505, -4.6425, -14.596 )
+
+[node name="arm_upper_fore" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso"]
+position = Vector2( -1.21264, 5.06282 )
+rotation = 0.605298
+rest = Transform2D( 0.822333, 0.569007, -0.569007, 0.822333, -1.21264, 5.06282 )
+
+[node name="arm_lower_fore" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso/arm_upper_fore"]
+position = Vector2( 26.7874, -21.8268 )
+rotation = -2.05934
+rest = Transform2D( -0.469337, -0.883019, 0.883019, -0.469337, 26.7874, -21.8268 )
+
+[node name="weapon_gun" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso/arm_upper_fore/arm_lower_fore"]
+position = Vector2( 22.1062, -9.44438 )
+rotation = -0.864818
+rest = Transform2D( 0.700151, -0.713995, 0.713995, 0.700151, 22.1062, -9.44438 )
+
+[node name="arm_upper_rear" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso"]
+position = Vector2( -12.4615, -19.1539 )
+rest = Transform2D( 1, 0, 0, 1, -12.4615, -19.1539 )
+
+[node name="arm_lower_rear" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/torso/arm_upper_rear"]
+position = Vector2( 25.7106, -16.9769 )
+rotation = -2.50188
+rest = Transform2D( -0.80227, -0.596961, 0.596961, -0.80227, 25.7106, -16.9769 )
+
+[node name="leg_upper_fore" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root"]
+position = Vector2( -11.4277, -3.95493 )
+rest = Transform2D( 1, 0, 0, 1, -11.4277, -3.95493 )
+
+[node name="leg_lower_fore" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/leg_upper_fore"]
+position = Vector2( 8.87249, 40.6871 )
+rotation = 1.74043
+rest = Transform2D( -0.168823, 0.985646, -0.985646, -0.168823, 8.87249, 40.6871 )
+default_length = 56.0
+
+[node name="leg_upper_rear" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root"]
+position = Vector2( 8.32445, -9.51366 )
+rest = Transform2D( 1, 0, 0, 1, 8.32445, -9.51366 )
+
+[node name="leg_lower_rear" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root/leg_upper_rear"]
+position = Vector2( 6.68379, 41.0324 )
+rotation = 1.72589
+rest = Transform2D( -0.154475, 0.987997, -0.987997, -0.154475, 6.68379, 41.0324 )
+default_length = 56.0
+
+[node name="device" type="Bone2D" parent="AnimationPlayer/Skeleton2D/root"]
+position = Vector2( -18.2639, -9.70316 )
+rotation = 1.79939
+rest = Transform2D( -0.226612, 0.973985, -0.973985, -0.226612, -18.2639, -9.70316 )
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+tree_root = SubResource( 2 )
+anim_player = NodePath("..")
+active = true
+process_mode = 0
+parameters/playback = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -50 )
+current = true
