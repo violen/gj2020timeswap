@@ -9,6 +9,10 @@ var platform = OS.get_name()
 
 var canDoubleJump = false
 
+enum {NORMAL_SHOT, TRIPLE_SHOT, SPIRAL_SHOT}
+
+var currentShotType = NORMAL_SHOT
+
 func _is_mobile() -> bool:
     match platform:
         "Android":
