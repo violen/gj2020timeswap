@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex"
+path="res://.import/fist_rear.png-1150fc82936b3321c95a7faa0ade83d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://80s entrance foreground flat.png"
-dest_files=[ "res://.import/80s entrance foreground flat.png-a759372d4bdb2e21c31bba792f67493b.stex" ]
+source_file="res://Amber bones/fist_rear.png"
+dest_files=[ "res://.import/fist_rear.png-1150fc82936b3321c95a7faa0ade83d6.stex" ]
 
 [params]
 
