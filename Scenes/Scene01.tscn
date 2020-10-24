@@ -8,6 +8,8 @@
 [ext_resource path="res://Scripts/player.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 14.2103
+height = 28.7556
 
 [node name="Container" type="Control"]
 __meta__ = {
@@ -15,8 +17,8 @@ __meta__ = {
 }
 
 [node name="title" type="Sprite" parent="."]
-position = Vector2( 526.197, 317.408 )
-scale = Vector2( 1.68896, 1.41151 )
+position = Vector2( 962.13, 544.194 )
+scale = Vector2( 3.14207, 2.49144 )
 texture = ExtResource( 2 )
 
 [node name="enemy" type="Sprite" parent="."]
@@ -25,23 +27,29 @@ texture = ExtResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -3.36743, 0.841827 )
+position = Vector2( 577.195, 391.659 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="player" type="Sprite" parent="Area2D"]
-position = Vector2( 796.885, 283.572 )
+position = Vector2( 820.43, 301.231 )
+scale = Vector2( 2.96209, 2.47157 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 822.018, 303.764 )
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( -5.34534, 24.9452 )
+position = Vector2( -36.0228, -37.2717 )
+scale = Vector2( 1.76295, 2.78869 )
 texture = ExtResource( 1 )
 polygon = PoolVector2Array( 345.49, 236.898, 400.93, 249.523, 446.366, 243.287, 529.646, 241.102, 523.76, 280.624, 434.625, 315.942, 338.763, 317.624, 232.81, 292.397, 197.492, 312.578, 279.9, 353.782, 434.625, 371.441, 536.373, 358.828, 601.122, 313.419, 655.781, 257.079, 749.12, 286.51, 788.642, 337.805, 885.346, 368.077, 950.095, 318.465, 960.185, 270.533, 882.823, 246.988, 833.21, 288.192, 626.349, 192.33, 555.946, 163.997, 443.693, 153.306, 328.672, 186.444 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Polygon2D"]
 
