@@ -84,18 +84,28 @@ func _perform_range_attack():
     match GameGlobals.currentShotType:
         GameGlobals.NORMAL_SHOT:
             projectile = preload("res://Prefabs/ProjectileA.tscn")
+            var bullet = projectile.instance()
+            owner.add_child(bullet)
+            bullet.transform = $Position2D.global_transform
+            bullet.direction = direction
         GameGlobals.TRIPLE_SHOT:
-            # TODO: change to projectile B
-            projectile = preload("res://Prefabs/ProjectileA.tscn")
+            projectile = preload("res://Prefabs/ProjectileB.tscn")
+            for i in range(3):
+                var bullet = projectile.instance()
+                owner.add_child(bullet)
+                bullet.transform = $Position2D.global_transform
+                var bullet_direction = direction
+                match i:
+                    1:
+                        bullet_direction.y = 1
+                    2:
+                        bullet_direction.y = -1
+                bullet.direction = bullet_direction
         GameGlobals.SPIRAL_SHOT:
             # TODO: change to projectile C
             projectile = preload("res://Prefabs/ProjectileA.tscn")
         _:
             print("unknown Shot")
-    var bullet = projectile.instance()
-    owner.add_child(bullet)
-    bullet.transform = $Position2D.global_transform
-    bullet.direction = direction
 
 func _switch_weapon():
     if OS.get_system_time_msecs() > last_weapon_switch + switch_weapon_cooldown:
