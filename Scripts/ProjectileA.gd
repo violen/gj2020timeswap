@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 25
+export var speed = 100
 var direction = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +13,8 @@ func _ready():
 #    move_local_x(delta * speed)
 
 func _physics_process(delta):
-    position += transform.x * speed * delta
+    # TODO: Rotate sprite to reflect direction
+    position += Vector2(direction.x * speed * delta, 0)
 
 func _on_ProjectileA_area_entered(area):
     if area.get_collision_layer_bit(1):

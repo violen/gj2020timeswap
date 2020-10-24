@@ -15,8 +15,6 @@ var weapon_type = MELEE
 export var switch_weapon_cooldown = 0
 var last_weapon_switch = 0
 
-export (PackedScene) var Projectile
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
@@ -95,8 +93,8 @@ func _perform_range_attack():
         _:
             print("unknown Shot")
     var bullet = projectile.instance()
-    get_node("/root/").add_child(bullet)
-    bullet.global_position = $Position2D.global_position
+    owner.add_child(bullet)
+    bullet.transform = $Position2D.global_transform
     bullet.direction = direction
 
 func _switch_weapon():
