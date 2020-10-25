@@ -1,20 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Images/medieval entrance.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/medieval mid.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Musik/medieval_loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://Prefabs/EnemySpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/MedievalArtefact.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/EnemyKnight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LeaveMedieval.tres.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 60, 130 )
 
 [node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 4.67441, 3956.63, 95.2863, 3920.77, 899.467, 3905.66, 933.447, 3930.2, 1522.42, 3898.11, 3051.54, 3913.27, 3141.34, 3928.99, 3175.01, 3578.78, 3293.99, 3515.92, 3581.34, 3547.35, 3754.2, 3704.5, 3745.22, 3839.19, 3792.37, 3904.29, 5162.85, 3919.97, 5738.2, 3836.06, 6283.59, 3770.14, 6211.67, 3824.08, 6191, 3858, 6514, 3876, 6456, 3918, 6025, 3979, 6021.92, 4094.83, -19.8178, 4109.92 )
+polygon = PoolVector2Array( 4.67441, 3956.63, 95.2863, 3920.77, 899.467, 3905.66, 933.447, 3930.2, 1522.42, 3898.11, 3051.54, 3913.27, 3141.34, 3928.99, 3175.01, 3578.78, 3293.99, 3515.92, 3581.34, 3547.35, 3754.2, 3704.5, 3745.22, 3839.19, 3792.37, 3904.29, 5162.85, 3919.97, 5777.93, 3860.04, 6130.93, 3785.04, 6311.93, 3786.04, 6211.67, 3824.08, 6191, 3858, 6522, 3867.04, 6456, 3918, 6025, 3979, 6021.92, 4094.83, -19.8178, 4109.92 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 6718.5, 4095.83, 6699.43, 4074.64, 6699.43, 4062.98, 6674, 4029.08, 6669.77, 3986.7, 6696.25, 3939.02, 6756.64, 3893.47, 6814.91, 3876.52, 6880.6, 3893.47, 6909.2, 3923.13, 6979.13, 3954.92, 6992.9, 4008.95, 7049.05, 4065.1, 7038.46, 4094.77 )
+polygon = PoolVector2Array( 6718.5, 4095.83, 6699.43, 4074.64, 6699.43, 4062.98, 6674, 4029.08, 6669.77, 3986.7, 6697, 3938.04, 6978, 3936.04, 6992.9, 4008.95, 7049.05, 4065.1, 7038.46, 4094.77 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 7652.59, 4093.98, 7652.59, 4041.59, 7473.21, 3997.15, 7401.78, 3935.24, 7471.62, 3936.82, 7309.71, 3835.23, 7462.1, 3844.75, 7430.35, 3817.77, 7765.29, 3903.49, 8065.96, 3927.78, 9373.76, 3897.54, 9473.46, 3935.72, 11360.9, 3909.03, 12518.1, 3983.1, 13537, 3900.04, 14419.5, 3990.55, 15200.1, 3950.95, 16133.5, 3351.32, 16127.8, 3266.47, 15301.9, 3272.13, 15307.6, 3232.53, 16133.5, 3226.87, 16133.5, 2536.74, 15307.6, 2531.08, 15307.6, 2491.48, 16144.8, 2497.14, 16132.9, 1768.38, 15305.2, 1768.38, 15300.5, 1730.33, 15345.6, 1732.7, 15348, 1616.16, 15780.9, 1618.54, 15788, 1735.08, 16128.1, 1732.7, 16130.5, 1468.7, 16002.1, 1468.7, 16002.1, 1414, 16130.5, 1406.86, 16131.2, 604.963, 15384.4, 604.963, 15389.2, 543.124, 16126.5, 547.881, 16131.2, 405.176, 16240.6, 405.176, 16234.5, 3926.7, 16383.8, 3923.33, 16386, 4096.19 )
+polygon = PoolVector2Array( 7652.59, 4093.98, 7652.59, 4041.59, 7473.21, 3997.15, 7193.65, 3929.04, 7471.62, 3936.82, 7309.71, 3835.23, 7462.1, 3844.75, 7430.35, 3817.77, 7765.29, 3903.49, 8065.96, 3927.78, 9373.76, 3897.54, 9473.46, 3935.72, 11360.9, 3909.03, 12518.1, 3983.1, 13537, 3900.04, 14419.5, 3990.55, 15200.1, 3950.95, 16133.5, 3351.32, 16127.8, 3266.47, 15301.9, 3272.13, 15307.6, 3232.53, 16133.5, 3226.87, 16133.5, 2536.74, 15307.6, 2531.08, 15307.6, 2491.48, 16144.8, 2497.14, 16132.9, 1768.38, 15305.2, 1768.38, 15300.5, 1730.33, 15345.6, 1732.7, 15348, 1616.16, 15780.9, 1618.54, 15788, 1735.08, 16128.1, 1732.7, 16130.5, 1468.7, 16002.1, 1468.7, 16002.1, 1414, 16130.5, 1406.86, 16131.2, 604.963, 15384.4, 604.963, 15389.2, 543.124, 16126.5, 547.881, 16131.2, 405.176, 16240.6, 405.176, 16234.5, 3926.7, 16383.8, 3923.33, 16386, 4096.19 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 14951.9, 403.686, 15056.1, 402.004, 15059.5, 711.454, 15173.9, 714.817, 15173.9, 778.726, 15056.1, 777.044, 15057.8, 1061.27, 15710.3, 1059.58, 15710.3, 1128.54, 15057.8, 1121.81, 15057.9, 2139.03, 15615.3, 2140.53, 15615.3, 2179.49, 15056.4, 2179.49, 15057.6, 2854.77, 15615.6, 2854.77, 15614.3, 2892.15, 15060.3, 2896.15, 15057.6, 3551.19, 15251, 3553.71, 15249.3, 3589.87, 14954.1, 3588.19 )
@@ -27,3 +42,44 @@ centered = false
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( 8192, 0 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( -277.54, -378.115, -175.946, 4371.39, 16643.1, 4295.19, 16668.5, 206.048 )
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
+enemy_bp = ExtResource( 7 )
+
+[node name="Position2D" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 4266.93, 3682.77 )
+
+[node name="Position2D2" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 9587.9, 3809.76 )
+
+[node name="Position2D3" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 14375.5, 3847.86 )
+
+[node name="Position2D4" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 15975.6, 3085.91 )
+
+[node name="Position2D5" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 11835.7, 3784.36 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="PlayerBody" parent="." instance=ExtResource( 5 )]
+position = Vector2( 406.374, 3758.96 )
+
+[node name="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 15632.7, 1498.51 )
+powerup = 7
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 293, 3745 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]

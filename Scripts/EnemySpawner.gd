@@ -6,7 +6,7 @@ var spawn_map = {}
 var spawn_cooldown = 500
 var last_spawn_rotation = 0
 
-var enemy_bp = preload("res://Prefabs/EnemyBody.tscn")
+export (PackedScene) var enemy_bp
 var spiral_shot = preload("res://Prefabs/SpiralShot.tscn")
 var triple_shot = preload("res://Prefabs/TripleShot.tscn")
 var normal_shot = preload("res://Prefabs/NormalShot.tscn")
@@ -26,7 +26,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if OS.get_system_time_msecs() > last_spawn_rotation + spawn_cooldown:
-        _spawn()
+        #_spawn()
         last_spawn_rotation = OS.get_system_time_msecs()
 
 

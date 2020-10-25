@@ -38,6 +38,10 @@ func _on_collected():
             GameGlobals.currentShotType = GameGlobals.SPIRAL_SHOT
         PowerUps.SYNTH:
             GameGlobals.canLeave80s = true
+        PowerUps.SWORD:
+            GameGlobals.canLeaveFuture = true
+        PowerUps.GOBLET:
+            GameGlobals.canLeaveMedieval = true
         _:
             print("unknown powerup")
 

@@ -29,4 +29,4 @@ anims/Synth = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 texture = ExtResource( 1 )
 hframes = 8
-frame = 1
+frame = 3
