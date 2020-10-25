@@ -40,6 +40,8 @@ func _on_collected():
             GameGlobals.canLeave80s = true
         PowerUps.SWORD:
             GameGlobals.canLeaveFuture = true
+        PowerUps.GOBLET:
+            GameGlobals.canLeaveMedieval = true
         _:
             print("unknown powerup")
 
