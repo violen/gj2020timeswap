@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var speed_x = 150
-export var jump_force = 600
-export var gravity = 1000
+export var speed_x = 300
+export var jump_force = 1500
+export var gravity = 2000
 var velocity = Vector2.ZERO
 var direction = Vector2(1, 0)
 
@@ -39,11 +39,14 @@ func _move_Player(delta):
     _check_and_perform_jump()
 
 func _get_input():
+    velocity.x = 0
     if Input.is_action_pressed("run_right"):
         direction.x = 1
+        $player.flip_h = false
         velocity.x = speed_x
     if Input.is_action_pressed("run_left"):
         direction.x = -1
+        $player.flip_h = true
         velocity.x = -speed_x
     if Input.is_action_just_pressed("attack"):
         _attack()

@@ -1,17 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Images/80s entrance flat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/80s entrance foreground flat.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/EnemySpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Musik/into_the_timeswap_01.wav" type="AudioStream" id=5]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 3 )]
+
+[node name="Position2D" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 1929.06, 3396.31 )
+
+[node name="Position2D2" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 2992.24, 3910.07 )
+
+[node name="Position2D3" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 5412.42, 3371.69 )
+
+[node name="Position2D4" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 3981.46, 3938.65 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -0.0078125, 3968.57, -0.015625, 4095.99, 8191.99, 4095.99, 8194.33, 3714.39, 6400.05, 3712.83, 6398, 3999.07, 2558.63, 4000.58, 2558.63, 3968.51, 2535.47, 3968.51, 2534.13, 3093.26, 2412.39, 3096.86, 2333.34, 3216.27, 2332.76, 3519.86, 2297.08, 3519.86, 1927.08, 3467.66, 1296.38, 3576.18, 1294.37, 3965.96 )
@@ -20,6 +38,14 @@ polygon = PoolVector2Array( -0.0078125, 3968.57, -0.015625, 4095.99, 8191.99, 40
 polygon = PoolVector2Array( 6126.24, 3465.89, 4743.8, 3465.89, 4600.85, 3703.02, 4599.17, 4005.75, 6126.24, 4009.11 )
 one_way_collision = true
 
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 4217.54, 2104.37 )
+build_mode = 1
+polygon = PoolVector2Array( -4693.67, -2866.54, -4657.75, 2826.59, 6153.8, 2664.95, 5543.18, -3082.05, -4370.4, -3046.13, -4370.4, -3046.13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Sprite2" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 centered = false
@@ -27,6 +53,6 @@ centered = false
 [node name="PlayerBody" parent="." instance=ExtResource( 4 )]
 position = Vector2( 181.485, 3771.71 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 181.608, 3891.26 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
