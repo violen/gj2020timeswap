@@ -13,19 +13,15 @@ func _ready():
 #    pass
 func _spread_rotation(direction):
     if(direction == Vector2(1, 1)):
-        $Sprite.rotation_degrees = 45
-    elif(direction == Vector2(1, 0)):
-        $Sprite.flip_h = false
+        rotation_degrees = 45
     elif(direction == Vector2(1, -1)):
-        $Sprite.rotation_degrees = -45
+        rotation_degrees = -45
     elif(direction == Vector2(-1, 1)):
-        $Sprite.flip_h = true
-        $Sprite.rotation_degrees = -45
+        rotation_degrees = -45 - 180
     elif(direction == Vector2(-1, 0)):
-        $Sprite.flip_h = true
+        rotation_degrees = 180
     elif(direction == Vector2(-1, -1)):
-        $Sprite.flip_h = true
-        $Sprite.rotation_degrees = 45
+        rotation_degrees = 45 + 180
 
 func _physics_process(delta):
     # TODO: Rotate sprite to reflect direction
