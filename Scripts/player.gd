@@ -78,6 +78,8 @@ func _attack():
 func _perform_melee_attack():
     if !$Slap.is_playing():
         $Slap.play()
+    if !$AnimationPlayer.is_playing():
+        $AnimationPlayer.play("Slash")
     var target = $Melee.get_collider()
     if target != null:
         if target.name.find("Enemy") >= 0:

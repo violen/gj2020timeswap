@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/jessie slurp flat.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/player.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sounds/slap.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sounds/shoot.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sounds/switch_weapon.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/SlashAnim.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.9034
@@ -59,6 +60,7 @@ __meta__ = {
 
 [node name="Melee" type="RayCast2D" parent="."]
 position = Vector2( 0.894867, 0.228271 )
+scale = Vector2( 1, 20 )
 enabled = true
 cast_to = Vector2( 150, 0 )
 __meta__ = {
@@ -79,3 +81,5 @@ drag_margin_bottom = 0.0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 7 )]
