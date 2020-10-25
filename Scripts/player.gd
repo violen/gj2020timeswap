@@ -83,13 +83,14 @@ func _perform_range_attack():
     var projectile = null
     match GameGlobals.currentShotType:
         GameGlobals.NORMAL_SHOT:
-            projectile = preload("res://Prefabs/ProjectileA.tscn")
+            projectile = preload("res://Prefabs/ProjectileSingle.tscn")
             var bullet = projectile.instance()
             owner.add_child(bullet)
             bullet.transform = $Position2D.global_transform
             bullet.direction = direction
+            bullet._bullet_direction(direction)
         GameGlobals.TRIPLE_SHOT:
-            projectile = preload("res://Prefabs/ProjectileB.tscn")
+            projectile = preload("res://Prefabs/ProjectileSpread.tscn")
             for i in range(3):
                 var bullet = projectile.instance()
                 owner.add_child(bullet)
@@ -101,6 +102,7 @@ func _perform_range_attack():
                     2:
                         bullet_direction.y = -1
                 bullet.direction = bullet_direction
+                bullet._spread_rotation(bullet_direction)
         GameGlobals.SPIRAL_SHOT:
             projectile = preload("res://Prefabs/ProjectileC.tscn")
             var bullet = projectile.instance()
