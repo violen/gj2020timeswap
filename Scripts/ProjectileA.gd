@@ -1,12 +1,12 @@
 extends Area2D
 
-export var speed = 100
+export var speed = 300
 var direction = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass
-    
+
 func _bullet_direction(direction):
     if(self.direction == Vector2(-1, 0)):
         $Sprite.flip_h = true

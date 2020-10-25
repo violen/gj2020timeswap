@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 250
+export var speed = 500
 var direction = Vector2.ZERO
 var velocity = Vector2.ZERO
 
