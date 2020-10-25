@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Images/orange.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://Prefabs/EnemyBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/DoubleJump.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
 
@@ -35,3 +36,6 @@ physics_material_override = SubResource( 2 )
 polygon = PoolVector2Array( 372.037, 197.025, 446.699, 152.821, 554.917, 164.713, 666.703, 212.281, 820.125, 282.913, 840.922, 283.039, 876.598, 250.93, 876.192, 250.525, 876.192, 250.525, 856.557, 228.974, 893.458, 223.903, 956.83, 230.495, 973.676, 253.823, 959.714, 273.663, 949.623, 318.23, 884.033, 367.843, 783.967, 337.571, 749.49, 287.117, 655.309, 256.845, 598.969, 311.503 )
 
 [node name="EnemyBody" parent="." instance=ExtResource( 3 )]
+
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1297.7, 577.784 )
