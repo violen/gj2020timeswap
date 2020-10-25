@@ -102,8 +102,11 @@ func _perform_range_attack():
                         bullet_direction.y = -1
                 bullet.direction = bullet_direction
         GameGlobals.SPIRAL_SHOT:
-            # TODO: change to projectile C
-            projectile = preload("res://Prefabs/ProjectileA.tscn")
+            projectile = preload("res://Prefabs/ProjectileC.tscn")
+            var bullet = projectile.instance()
+            owner.add_child(bullet)
+            bullet.transform = $Position2D.global_transform
+            bullet.direction = direction
         _:
             print("unknown Shot")
 
