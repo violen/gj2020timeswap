@@ -4,9 +4,11 @@ export var speed_x = 20
 export var gravity = 1000
 var velocity = Vector2.ZERO
 
+export (PackedScene) var drop
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+    pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,4 +16,16 @@ func _ready():
 #	pass
 
 func _hit():
-    queue_free() # instant death request
+
+
+    _drop()
+    _die()
+
+func _drop():
+    var scene = drop.instance()
+    scene.position = global_position
+    scene.transform = global_transform
+    owner.add_child(scene)
+
+func _die():
+    queue_free()

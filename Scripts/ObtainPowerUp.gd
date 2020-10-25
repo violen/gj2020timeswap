@@ -10,17 +10,18 @@ enum PowerUps {
 
 export var powerup = PowerUps.UNKNOWN
 
-onready var tween_move_values = [-5, +5]
+onready var tween_move_values = [Vector2(position.x, position.y-5), Vector2(position.x, position.y+5)]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     assert(powerup != PowerUps.UNKNOWN, "Please set a PowerUp Type in the Editor")
+    print("DROP POSITION "+ str(position.y))
     _start_tween_animation()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+func _process(delta):
+    print("DROP POSITION UPDATE"+ str(position.y))
 
 func _on_collected():
     match powerup:
@@ -44,7 +45,7 @@ func _start_tween_animation():
     $Tween.interpolate_property(
         self,
         "position:y",
-        tween_move_values[0], tween_move_values[1], .75,
+        tween_move_values[0].y, tween_move_values[1].y, .75,
         Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     $Tween.start()
 
