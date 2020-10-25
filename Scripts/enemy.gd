@@ -4,7 +4,10 @@ export var speed_x = 20
 export var gravity = 1000
 var velocity = Vector2.ZERO
 
-export (PackedScene) var drop
+var drop
+
+var position_name = ""
+var spawner = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,16 +19,17 @@ func _ready():
 #	pass
 
 func _hit():
-
-
     _drop()
     _die()
 
 func _drop():
-    var scene = drop.instance()
-    scene.position = global_position
-    scene.transform = global_transform
-    owner.add_child(scene)
+    if drop != null:
+        drop.position = global_position
+        drop.transform = global_transform
+        get_tree().get_root().add_child(drop)
 
 func _die():
+    if spawner != null:
+        spawner.unregister(position_name)
+        spawner = null
     queue_free()

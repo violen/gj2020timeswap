@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://Prefabs/EnemyBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Prefabs/DoubleJump.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/EnemySpawner.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PhysicsMaterial" id=2]
 
@@ -13,10 +13,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="EnemySpawner" parent="." instance=ExtResource( 6 )]
+
+[node name="Position2D" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 1093.37, 487.353 )
+
+[node name="Position2D2" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 1542.95, 560.353 )
+
 [node name="title" type="Sprite" parent="."]
 position = Vector2( 962.13, 544.194 )
 scale = Vector2( 3.14207, 2.49144 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerBody" parent="." instance=ExtResource( 4 )]
 
@@ -37,4 +48,3 @@ polygon = PoolVector2Array( 372.037, 197.025, 446.699, 152.821, 554.917, 164.713
 
 [node name="EnemyBody" parent="." instance=ExtResource( 3 )]
 position = Vector2( 845.485, 369.234 )
-drop = ExtResource( 5 )

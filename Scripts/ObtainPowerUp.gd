@@ -15,13 +15,12 @@ onready var tween_move_values = [Vector2(position.x, position.y-5), Vector2(posi
 # Called when the node enters the scene tree for the first time.
 func _ready():
     assert(powerup != PowerUps.UNKNOWN, "Please set a PowerUp Type in the Editor")
-    print("DROP POSITION "+ str(position.y))
     _start_tween_animation()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    print("DROP POSITION UPDATE"+ str(position.y))
+# func _process(delta):
+#     print("DROP POSITION UPDATE"+ str(position.y))
 
 func _on_collected():
     match powerup:
