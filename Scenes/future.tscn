@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/future entrance flat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/future mid flat.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/PlayerBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/EnemySpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/EnemyRobot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/FutureArtefact.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Area2D2.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 60, 130 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -14,8 +22,56 @@ polygon = PoolVector2Array( 8387.29, 2638.1, 8802.69, 2638.1, 8863.23, 2720.51, 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite2" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( 8192, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
+enemy_bp = ExtResource( 5 )
+
+[node name="Position2D" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 2381.42, 269.087 )
+
+[node name="Position2D2" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 7938.06, 188.361 )
+
+[node name="Position2D3" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 14813.2, 322.904 )
+
+[node name="Position2D4" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 10763.5, 3511.58 )
+
+[node name="Position2D5" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 12216.5, 295.996 )
+
+[node name="Position2D6" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 9673.67, 3013.77 )
+
+[node name="PlayerBody" parent="." instance=ExtResource( 3 )]
+position = Vector2( 178.385, 376.324 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -332.245, -296.521, -238.065, 4735.4, 16620.2, 4506.68, 16553, -215.795 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 9148.95, 3121.41 )
+powerup = 6
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 78, 367 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]

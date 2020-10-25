@@ -14,6 +14,8 @@ enum {NORMAL_SHOT, TRIPLE_SHOT, SPIRAL_SHOT}
 var currentShotType = NORMAL_SHOT
 
 var canLeave80s = false
+var canLeaveFuture = false
+var canLeaveMedieval = false
 
 func _is_mobile() -> bool:
     match platform:
