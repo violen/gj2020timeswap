@@ -20,17 +20,11 @@ func _ready():
 #    move_local_x(delta * speed)
 
 func _physics_process(delta):
-
-    if OS.get_system_time_msecs() > last_loop_done + loop_cooldown:
-        # _do_a_barrel_roll(delta)
-        last_loop_done = OS.get_system_time_msecs()
-
     velocity.y = sin(position.x * delta * 4.5) * speed
     velocity.x = speed
     velocity.x = clamp(velocity.x, -speed, speed)
 
     position += velocity * delta * direction.x
-    # position += Vector2(direction.x * speed * delta, 0)
 
 func _on_ProjectileC_area_entered(area):
     if area.get_collision_layer_bit(1):
@@ -42,7 +36,3 @@ func _on_ProjectileC_body_entered(body):
     if body.name.find("Player") >= 0:
         return
     queue_free()
-
-
-func _do_a_barrel_roll(delta):
-    position += Vector2(0 , cos(delta * 20) * 0.5)
