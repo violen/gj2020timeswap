@@ -9,10 +9,9 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.9034
-height = 183.721
+height = 156.193
 
 [node name="PlayerBody" type="KinematicBody2D"]
-position = Vector2( -1.12774, 0.143433 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
@@ -21,16 +20,13 @@ __meta__ = {
 switch_weapon_cooldown = 500
 
 [node name="player" type="Sprite" parent="."]
-position = Vector2( 4.36059, -31.2616 )
-scale = Vector2( 1.93854, 1.80772 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.725525, 25.9999 )
-scale = Vector2( 1.33795, 1.40481 )
+position = Vector2( 0, 26 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -70,7 +66,6 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0.529739, -0.392044 )
 __meta__ = {
 "_edit_lock_": true
 }
