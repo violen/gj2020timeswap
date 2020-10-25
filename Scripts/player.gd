@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed_x = 35
+export var speed_x = 150
 export var jump_force = 600
 export var gravity = 1000
 var velocity = Vector2.ZERO
@@ -27,24 +27,24 @@ func _process(delta):
 
 func _physics_process(delta):
     if direction != Vector2.ZERO:
-        $Melee.cast_to = direction.normalized() * 30
+        $Melee.cast_to = direction.normalized() * 150
 
 func _move_Player(delta):
 
     # if velocity.length() > 0:
     #     velocity = velocity.normalized() * speed_x
     velocity.y += gravity * delta
-    velocity = move_and_slide(velocity, Vector2.UP)
+    move_and_slide(velocity, Vector2.UP)
 
     _check_and_perform_jump()
 
 func _get_input():
     if Input.is_action_pressed("run_right"):
         direction.x = 1
-        velocity.x += speed_x
+        velocity.x = speed_x
     if Input.is_action_pressed("run_left"):
         direction.x = -1
-        velocity.x -= speed_x
+        velocity.x = -speed_x
     if Input.is_action_just_pressed("attack"):
         _attack()
     if Input.is_action_just_pressed("switch_weapon"):
@@ -77,7 +77,8 @@ func _perform_melee_attack():
         $Slap.play()
     var target = $Melee.get_collider()
     if target != null:
-        target._hit()
+        if target.name.find("Enemy") >= 0:
+            target._hit()
 
 func _perform_range_attack():
     var projectile = null
