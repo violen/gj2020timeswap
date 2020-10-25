@@ -12,10 +12,10 @@ radius = 14.2103
 height = 28.7556
 
 [node name="PlayerBody" type="KinematicBody2D"]
-position = Vector2( 1044.7, 576.627 )
+position = Vector2( -1.12774, 0.143433 )
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 switch_weapon_cooldown = 500
 
@@ -23,52 +23,31 @@ switch_weapon_cooldown = 500
 position = Vector2( -2.3136, -3.22992 )
 scale = Vector2( 2.96209, 2.47157 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.725525, -0.696869 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Slap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="SwitchWeapon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Melee" type="RayCast2D" parent="."]
 position = Vector2( -0.519348, 0.228271 )
 enabled = true
 cast_to = Vector2( 30, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, 0.667419 )
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
