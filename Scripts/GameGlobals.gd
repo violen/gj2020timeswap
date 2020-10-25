@@ -11,7 +11,7 @@ var canDoubleJump = false
 
 enum {NORMAL_SHOT, TRIPLE_SHOT, SPIRAL_SHOT}
 
-var currentShotType = NORMAL_SHOT
+var currentShotType = TRIPLE_SHOT
 
 func _is_mobile() -> bool:
     match platform:

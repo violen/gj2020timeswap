@@ -11,6 +11,21 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #    pass
+func _spread_rotation(direction):
+    if(direction == Vector2(1, 1)):
+        $Sprite.rotation_degrees = 45
+    elif(direction == Vector2(1, 0)):
+        $Sprite.flip_h = false
+    elif(direction == Vector2(1, -1)):
+        $Sprite.rotation_degrees = -45
+    elif(direction == Vector2(-1, 1)):
+        $Sprite.flip_h = true
+        $Sprite.rotation_degrees = -45
+    elif(direction == Vector2(-1, 0)):
+        $Sprite.flip_h = true
+    elif(direction == Vector2(-1, -1)):
+        $Sprite.flip_h = true
+        $Sprite.rotation_degrees = 45
 
 func _physics_process(delta):
     # TODO: Rotate sprite to reflect direction
