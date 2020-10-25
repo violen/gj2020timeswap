@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Images/80s entrance flat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/80s entrance foreground flat.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scripts/Leave80s.gd" type="Script" id=6]
 [ext_resource path="res://Prefabs/80sArtefact.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/DoubleJump.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Images/80s mid back flat.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/80s mid fore flat.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 44.6781, 166.075 )
@@ -28,9 +30,20 @@ position = Vector2( 5380.42, 3319.69 )
 [node name="Position2D4" type="Position2D" parent="EnemySpawner"]
 position = Vector2( 4081.46, 3854.65 )
 
+[node name="Position2D5" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 13595.3, 3645.76 )
+
+[node name="Position2D6" type="Position2D" parent="EnemySpawner"]
+position = Vector2( 14762.6, 700.417 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Sprite3" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 8192, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 __meta__ = {
@@ -38,23 +51,29 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -0.0078125, 3968.57, -0.015625, 4095.99, 8191.99, 4095.99, 8194.33, 3714.39, 6400.05, 3712.83, 6398, 3999.07, 2558.63, 4000.58, 2558.63, 3968.51, 2535.47, 3968.51, 2534.13, 3093.26, 2412.39, 3096.86, 2333.34, 3216.27, 2332.76, 3519.86, 2297.08, 3519.86, 1927.08, 3467.66, 1296.38, 3576.18, 1294.37, 3965.96 )
+polygon = PoolVector2Array( -0.0078125, 3968.57, -0.015625, 4095.99, 8191.99, 4095.99, 16405.3, 4092.3, 16399, -9.74146, 13681.2, 10.4401, 13701.4, 2694.58, 13829.2, 2701.31, 13829.2, 1799.87, 15531.2, 1786.41, 15531.2, 1651.87, 14596.1, 1658.6, 13963.7, 1012.79, 13842.7, 1012.79, 13829.2, 138.256, 16251, 138.256, 16230.8, 1012.79, 14562.5, 1032.97, 14562.5, 1154.06, 16244.3, 1154.06, 16230.8, 1651.87, 16089.5, 1665.32, 15477.4, 2297.68, 14569.2, 2317.86, 14575.9, 2452.4, 16251, 2445.68, 16248.7, 2948.66, 16031.6, 2942.02, 15006.2, 3970.65, 8193.63, 3964.96, 8194.33, 3714.39, 6400.05, 3712.83, 6398, 3999.07, 2558.63, 4000.58, 2558.63, 3968.51, 2535.47, 3968.51, 2534.13, 3093.26, 2412.39, 3096.86, 2333.34, 3216.27, 2332.76, 3519.86, 2297.08, 3519.86, 1927.08, 3467.66, 1296.38, 3576.18, 1294.37, 3965.96 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 6126.24, 3465.89, 4743.8, 3465.89, 4600.85, 3703.02, 4599.17, 4005.75, 6126.24, 4009.11 )
 one_way_collision = true
 
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 13826.6, 2302.58, 13829.4, 2941.81, 14615.7, 2941.81, 13982.1, 2302.58 )
+one_way_collision = true
+
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 4217.54, 2104.37 )
 build_mode = 1
-polygon = PoolVector2Array( -4693.67, -2866.54, -4657.75, 2826.59, 6153.8, 2664.95, 5543.18, -3082.05, -4370.4, -3046.13, -4370.4, -3046.13 )
+polygon = PoolVector2Array( -4693.67, -2866.54, -4657.75, 2826.59, 13741.2, 2538.86, 13176.8, -2843.52, -4370.4, -3046.13, -4370.4, -3046.13 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite2" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-centered = false
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 10550.6, 3456.04, 10556.9, 2960.77, 11839.5, 2960.77, 11839.5, 3468.74 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 12153.2, 2942.25, 12153.2, 3072.42, 14962.9, 3069.24, 15102.6, 2942.25, 13318.4, 2935.9, 13315.2, 2808.91, 13188.2, 2824.78, 13181.9, 2942.25 )
 
 [node name="PlayerBody" parent="." instance=ExtResource( 4 )]
 position = Vector2( 181.485, 3771.71 )
@@ -64,7 +83,7 @@ stream = ExtResource( 5 )
 autoplay = true
 
 [node name="Area2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 6790.05, 3573.11 )
+position = Vector2( 15420.8, 811.333 )
 powerup = 5
 
 [node name="Area2D3" parent="." instance=ExtResource( 8 )]
@@ -79,4 +98,13 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( 8192, 0 )
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]
