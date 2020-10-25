@@ -6,6 +6,10 @@ enum PowerUps {
     NORMAL_SHOT,
     TRIPLE_SHOT,
     SPIRAL_SHOT,
+
+    SYNTH,
+    SWORD,
+    GOBLET
 }
 
 export var powerup = PowerUps.UNKNOWN
@@ -32,6 +36,8 @@ func _on_collected():
             GameGlobals.currentShotType = GameGlobals.TRIPLE_SHOT
         PowerUps.SPIRAL_SHOT:
             GameGlobals.currentShotType = GameGlobals.SPIRAL_SHOT
+        PowerUps.SYNTH:
+            GameGlobals.canLeave80s = true
         _:
             print("unknown powerup")
 

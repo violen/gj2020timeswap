@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -13,10 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#    pass
 
-func _on_Start_pressed():
-    get_tree().change_scene("res://Scenes/80s entrance.tscn")
-
-func _on_Quit_pressed():
-    get_tree().quit()
+func _on_Area2D2_body_entered(body):
+    if body.name.find("Player") >= 0:
+        if GameGlobals.canLeave80s:
+            get_tree().change_scene("res://Scenes/future.tscn")

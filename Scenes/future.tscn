@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://future entrance flat.png" type="Texture" id=1]
-[ext_resource path="res://future mid flat.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/future entrance flat.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/future mid flat.png" type="Texture" id=2]
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
